@@ -1,0 +1,6 @@
+user:
+      login: "yaml"
+      password: "yaml"
+crm:
+      host: "yaml"
+      endpoint: "yaml"
