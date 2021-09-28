@@ -1,0 +1,6 @@
+user:
+      login: "test"
+      password: "test"
+crm:
+      host: "test"
+      endpoint: "test"
