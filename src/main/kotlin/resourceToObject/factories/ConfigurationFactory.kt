@@ -1,17 +1,17 @@
 package resourceToObject.factories
 
+import resourceToObject.data.ConfigurationInstance
 import resourceToObject.data.ResourceExtension
-import resourceToObject.instances.InstanceFromResource
 
-abstract class ConfigurationFactory {
+object ConfigurationFactory {
 
-  abstract fun createInstance(): InstanceFromResource
+  fun createFactory(resourceExtension: ResourceExtension): ConfigFactory =
+    when (resourceExtension) {
+      ResourceExtension.JSON -> JsonReaderFactory()
+      ResourceExtension.YAML -> YamlReaderFactory()
+    }
+}
 
-  companion object {
-    inline fun <reified T : InstanceFromResource> create(resourceExtension: ResourceExtension): ConfigurationFactory =
-      when (resourceExtension) {
-        ResourceExtension.JSON -> JsonReaderFactory()
-        ResourceExtension.YAML -> YamlReaderFactory()
-      }
-  }
+interface ConfigFactory {
+  fun createInstance(): ConfigurationInstance
 }

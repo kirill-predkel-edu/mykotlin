@@ -6,7 +6,6 @@ import java.io.File
 
 object JsonToObject {
   inline fun <reified T : Any> readJson(filePath: String): T {
-    val mapper = jacksonObjectMapper()
-    return mapper.readValue(File(filePath))
+    return jacksonObjectMapper().readValue(File(filePath))
   }
 }

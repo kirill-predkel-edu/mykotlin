@@ -1,10 +1,11 @@
 package resourceToObject.factories
 
-import resourceToObject.instances.InstanceFromJson
-import resourceToObject.instances.InstanceFromResource
+import resourceToObject.data.ConfigurationInstance
+import resourceToObject.readers.JsonToObject
 
-class JsonReaderFactory : ConfigurationFactory() {
-  override fun createInstance(): InstanceFromResource {
-    return InstanceFromJson()
+class JsonReaderFactory : ConfigFactory {
+  private val jsonPath: String = "src/main/resources/configuration_resources/configuration.json"
+  override fun createInstance(): ConfigurationInstance {
+    return JsonToObject.readJson(jsonPath)
   }
 }
