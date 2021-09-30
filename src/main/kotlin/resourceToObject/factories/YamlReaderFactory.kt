@@ -3,7 +3,7 @@ package resourceToObject.factories
 import resourceToObject.data.ConfigurationInstance
 import resourceToObject.readers.YamlToObject
 
-class YamlReaderFactory : ConfigFactory {
+class YamlReaderFactory : ConfigurationFactory {
 
   private var uniqueConfigurationInstance: ConfigurationInstance? = null
   private val yamlPath: String = "src/main/resources/configuration_resources/configuration.yaml"

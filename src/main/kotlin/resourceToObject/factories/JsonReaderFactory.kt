@@ -3,7 +3,7 @@ package resourceToObject.factories
 import resourceToObject.data.ConfigurationInstance
 import resourceToObject.readers.JsonToObject
 
-class JsonReaderFactory : ConfigFactory {
+class JsonReaderFactory : ConfigurationFactory {
 
   private var uniqueConfigurationInstance: ConfigurationInstance? = null
   private val jsonPath: String = "src/main/resources/configuration_resources/configuration.json"

@@ -1,11 +1,10 @@
 package resourceToObject
 
 import resourceToObject.data.ResourceExtension
-import resourceToObject.factories.ConfigurationFactory
+import resourceToObject.factories.CreateFactory
 
 fun main() {
-  val instanceFactory = ConfigurationFactory
-    .createFactory(ResourceExtension.JSON)
+  val instanceFactory = CreateFactory.createFactory(ResourceExtension.JSON)
 
   val instance1 = instanceFactory.createInstance()
   val instance2 = instanceFactory.createInstance()

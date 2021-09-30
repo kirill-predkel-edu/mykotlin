@@ -1,10 +1,10 @@
 {
   "user": {
-    "login": "json",
-    "password": "json"
+    "login": "jsonLogin",
+    "password": "jsonPassword"
   },
   "crm": {
-    "host": "json",
-    "endpoint": "json"
+    "host": "jsonHost",
+    "endpoint": "jsonEndpoint"
   }
 }
