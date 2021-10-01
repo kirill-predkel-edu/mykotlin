@@ -55,4 +55,11 @@ internal class CreateInstanceTest : BaseTestClass() {
       { assertEquals("yamlEndpoint", yamlConfigurationInstance.crm.endpoint) }
     )
   }
+
+  @Test
+  fun createInstanceJsonConfigurationWithSystemProperty() {
+    val instanceFactory = CreateFactory.createFactory(jsonSystemVar)
+    val jsonConfigurationInstance = instanceFactory.createInstance()
+    println(jsonConfigurationInstance)
+  }
 }
