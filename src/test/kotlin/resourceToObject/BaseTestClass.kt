@@ -10,12 +10,12 @@ internal abstract class BaseTestClass {
   var jsonSystemVar = ResourceExtension.valueOf(System.getProperty("property1"))
 
   @BeforeEach
-  fun setUp() {
+  open fun setUp() {
     logger.info("This is Before each message!")
   }
 
   @AfterEach
-  fun tearDown() {
+  open fun tearDown() {
     logger.info("This is After each message!")
   }
 }
