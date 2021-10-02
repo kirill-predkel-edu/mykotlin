@@ -4,7 +4,7 @@ import resourceToObject.data.ResourceExtension
 
 object CreateFactory {
 
-  fun createFactory(resourceExtension: ResourceExtension): ConfigurationFactory =
+  fun readExtension(resourceExtension: ResourceExtension): ConfigurationFactory =
     when (resourceExtension) {
       ResourceExtension.JSON -> JsonReaderFactory()
       ResourceExtension.YAML -> YamlReaderFactory()

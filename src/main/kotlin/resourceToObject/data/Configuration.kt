@@ -1,6 +1,6 @@
 package resourceToObject.data
 
-data class ConfigurationInstance(
+data class Configuration(
   val user: UserConfiguration,
   val crm: CrmConfiguration
 )

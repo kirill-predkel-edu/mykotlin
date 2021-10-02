@@ -1,7 +1,7 @@
 package resourceToObject.factories
 
-import resourceToObject.data.ConfigurationInstance
+import resourceToObject.data.Configuration
 
 interface ConfigurationFactory {
-  fun createInstance(): ConfigurationInstance
+  fun readConfiguration(): Configuration
 }
