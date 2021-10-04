@@ -7,12 +7,17 @@ import org.junit.jupiter.api.Test
 import resourceToObject.data.ResourceExtension
 import resourceToObject.factories.CreateFactory
 
-internal class SystemPropertyTest : BaseTestClass() {
+internal class SystemPropertyTest : BaseTest() {
   private val logger = LogManager.getLogger()
 
   @BeforeEach
-  override fun setUp() {
+  fun setUps() {
     System.setProperty("jsonExtension", "JSON")
+  }
+
+  @AfterEach
+  fun tearDowns() {
+    System.clearProperty("jsonExtension")
   }
 
   @Test
@@ -21,10 +26,5 @@ internal class SystemPropertyTest : BaseTestClass() {
     val instanceFactory = CreateFactory.readExtension(jsonSystemVar)
     val jsonConfigurationInstance = instanceFactory.readConfiguration()
     logger.info(jsonConfigurationInstance)
-  }
-
-  @AfterEach
-  override fun tearDown() {
-    System.clearProperty("jsonExtension")
   }
 }

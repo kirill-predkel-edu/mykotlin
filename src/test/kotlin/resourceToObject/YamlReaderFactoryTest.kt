@@ -6,7 +6,7 @@ import org.junit.jupiter.api.assertAll
 import resourceToObject.data.ResourceExtension
 import resourceToObject.factories.CreateFactory
 
-class YamlReaderFactoryTest {
+internal class YamlReaderFactoryTest : BaseTest() {
 
   @Test
   fun createInstanceYamlConfigurationVerifyFields() {

@@ -7,7 +7,7 @@ import resourceToObject.factories.CreateFactory
 import resourceToObject.factories.JsonReaderFactory
 import resourceToObject.factories.YamlReaderFactory
 
-internal class CreateFactoryTest : BaseTestClass() {
+internal class CreateFactoryTest : BaseTest() {
 
   @Test
   fun createInstanceJson() {

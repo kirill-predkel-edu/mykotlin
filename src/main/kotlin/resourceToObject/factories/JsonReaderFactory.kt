@@ -7,6 +7,6 @@ internal class JsonReaderFactory : ConfigurationFactory {
   private val jsonPath: String = "src/main/resources/configuration_resources/configuration.json"
 
   override fun readConfiguration(): Configuration {
-    return InstanceMaker.createInstance(JsonToObject.readJson(jsonPath))
+    return InstanceMaker.getInstance(JsonToObject.readJson(jsonPath))
   }
 }

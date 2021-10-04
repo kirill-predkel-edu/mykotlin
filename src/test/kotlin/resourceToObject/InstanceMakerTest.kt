@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test
 import resourceToObject.data.ResourceExtension
 import resourceToObject.factories.CreateFactory
 
-class InstanceMakerTest {
+internal class InstanceMakerTest : BaseTest() {
+
   @Test
   fun createInstanceJsonConfigurationVerifyFields() {
     val instance = CreateFactory.readExtension(ResourceExtension.JSON).readConfiguration()

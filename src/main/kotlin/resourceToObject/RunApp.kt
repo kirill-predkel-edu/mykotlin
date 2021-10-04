@@ -5,7 +5,8 @@ import resourceToObject.factories.CreateFactory
 
 fun main() {
   val instanceFactory = CreateFactory.readExtension(ResourceExtension.YAML)
-  val instanceFactorys = CreateFactory.readExtension(ResourceExtension.YAML)
+
+  val instanceFactorys = CreateFactory.readExtension(ResourceExtension.JSON)
   val instance1 = instanceFactory.readConfiguration()
   val instance2 = instanceFactorys.readConfiguration()
 

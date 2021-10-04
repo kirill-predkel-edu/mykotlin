@@ -6,7 +6,7 @@ import org.junit.jupiter.api.assertAll
 import resourceToObject.data.ResourceExtension
 import resourceToObject.factories.CreateFactory
 
-internal class JsonReaderFactoryTest : BaseTestClass() {
+internal class JsonReaderFactoryTest : BaseTest() {
 
   @Test
   fun createInstanceJsonConfigurationVerifyFields() {
