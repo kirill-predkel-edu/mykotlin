@@ -21,7 +21,7 @@ internal class SystemPropertyTest : BaseTest() {
   }
 
   @Test
-  fun createInstanceJsonConfigurationWithSystemProperty() {
+  fun readConfiguration_SystemVariable_ConfigurationIsRead() {
     val jsonSystemVar = ResourceExtension.valueOf(System.getProperty("jsonExtension"))
     val instanceFactory = CreateFactory.readExtension(jsonSystemVar)
     val jsonConfigurationInstance = instanceFactory.readConfiguration()

@@ -12,7 +12,7 @@ internal class ParametrizedTest : BaseTest() {
 
   @ParameterizedTest
   @EnumSource(ResourceExtension::class)
-  fun createInstanceEnumSourcePrintInstance(resourceExtension: ResourceExtension) {
+  fun readConfiguration_EnumSource_ConfigurationIsRead(resourceExtension: ResourceExtension) {
     val instanceFactory = CreateFactory.readExtension(resourceExtension)
     val configurationInstance = instanceFactory.readConfiguration()
     logger.info(configurationInstance)
@@ -20,7 +20,7 @@ internal class ParametrizedTest : BaseTest() {
 
   @ParameterizedTest
   @ValueSource(strings = ["JSON", "YAML"])
-  fun createValueSourcePrintInstance(input: String) {
+  fun readConfiguration_ValueSource_ConfigurationIsRead(input: String) {
     val instanceFactory = CreateFactory.readExtension(ResourceExtension.valueOf(input))
     val configurationInstance = instanceFactory.readConfiguration()
     logger.info(configurationInstance)

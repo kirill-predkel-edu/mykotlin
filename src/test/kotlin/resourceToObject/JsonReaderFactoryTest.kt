@@ -9,7 +9,7 @@ import resourceToObject.factories.CreateFactory
 internal class JsonReaderFactoryTest : BaseTest() {
 
   @Test
-  fun createInstanceJsonConfigurationVerifyFields() {
+  fun readConfiguration_JsonExtension_configurationIsCorrect() {
     val instanceFactory = CreateFactory.readExtension(ResourceExtension.JSON)
     val jsonConfigurationInstance = instanceFactory.readConfiguration()
     assertAll("All fields should be equal to configuration file",

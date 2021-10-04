@@ -8,7 +8,7 @@ import resourceToObject.factories.CreateFactory
 internal class InstanceMakerTest : BaseTest() {
 
   @Test
-  fun createInstanceJsonConfigurationVerifyFields() {
+  fun getInstance_() {
     val instance = CreateFactory.readExtension(ResourceExtension.JSON).readConfiguration()
     val anotherInstance = CreateFactory.readExtension(ResourceExtension.YAML).readConfiguration()
     assertTrue(instance === anotherInstance, "Fabrics should has referential equality ")

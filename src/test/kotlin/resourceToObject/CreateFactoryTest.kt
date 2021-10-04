@@ -10,13 +10,13 @@ import resourceToObject.factories.YamlReaderFactory
 internal class CreateFactoryTest : BaseTest() {
 
   @Test
-  fun createInstanceJson() {
+  fun readExtension_JsonExtension_FactoryIsCreated() {
     val instanceFactory = CreateFactory.readExtension(ResourceExtension.JSON)
     assertTrue(instanceFactory is JsonReaderFactory, "Concrete factory isn't instance of JsonReaderFactory")
   }
 
   @Test
-  fun createInstanceYaml() {
+  fun readExtension_YamlExtension_FactoryIsCreated() {
     val instanceFactory = CreateFactory.readExtension(ResourceExtension.YAML)
     assertTrue(instanceFactory is YamlReaderFactory,"Concrete factory isn't instance of YamlReaderFactory")
   }

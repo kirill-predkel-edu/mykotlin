@@ -9,7 +9,7 @@ import resourceToObject.factories.CreateFactory
 internal class YamlReaderFactoryTest : BaseTest() {
 
   @Test
-  fun createInstanceYamlConfigurationVerifyFields() {
+  fun readConfiguration_YamlExtension_configurationIsCorrect() {
     val instanceFactory = CreateFactory.readExtension(ResourceExtension.YAML)
     val yamlConfigurationInstance = instanceFactory.readConfiguration()
     assertAll("All fields should be equal to configuration file",
