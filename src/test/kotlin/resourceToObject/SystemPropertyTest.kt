@@ -4,8 +4,8 @@ import org.apache.logging.log4j.LogManager
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import resourceToObject.data.ResourceExtension
-import resourceToObject.factories.CreateFactory
+import config.ResourceType
+import config.provider.ConfigurationFactoryManager
 
 internal class SystemPropertyTest : BaseTest() {
   private val logger = LogManager.getLogger()
@@ -22,8 +22,8 @@ internal class SystemPropertyTest : BaseTest() {
 
   @Test
   fun readConfiguration_SystemVariable_ConfigurationIsRead() {
-    val jsonSystemVar = ResourceExtension.valueOf(System.getProperty("jsonExtension"))
-    val instanceFactory = CreateFactory.readExtension(jsonSystemVar)
+    val jsonSystemVar = ResourceType.valueOf(System.getProperty("jsonExtension"))
+    val instanceFactory = ConfigurationFactoryManager.setConfigurationFactory(jsonSystemVar)
     val jsonConfigurationInstance = instanceFactory.readConfiguration()
     logger.info(jsonConfigurationInstance)
   }

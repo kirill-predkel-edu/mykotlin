@@ -1,4 +1,4 @@
-package resourceToObject.data
+package config.model
 
 data class Configuration(
   val user: UserConfiguration,

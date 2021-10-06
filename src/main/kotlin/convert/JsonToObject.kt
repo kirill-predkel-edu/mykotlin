@@ -1,4 +1,4 @@
-package resourceToObject.readers
+package convert
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue

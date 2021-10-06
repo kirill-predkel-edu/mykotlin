@@ -2,22 +2,22 @@ package resourceToObject
 
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import resourceToObject.data.ResourceExtension
-import resourceToObject.factories.CreateFactory
-import resourceToObject.factories.JsonReaderFactory
-import resourceToObject.factories.YamlReaderFactory
+import config.ResourceType
+import config.provider.ConfigurationFactoryManager
+import config.provider.JsonReaderFactory
+import config.provider.YamlReaderFactory
 
-internal class CreateFactoryTest : BaseTest() {
+internal class ConfigurationFactoryManagerTest : BaseTest() {
 
   @Test
   fun readExtension_JsonExtension_FactoryIsCreated() {
-    val instanceFactory = CreateFactory.readExtension(ResourceExtension.JSON)
+    val instanceFactory = ConfigurationFactoryManager.setConfigurationFactory(ResourceType.JSON)
     assertTrue(instanceFactory is JsonReaderFactory, "Concrete factory isn't instance of JsonReaderFactory")
   }
 
   @Test
   fun readExtension_YamlExtension_FactoryIsCreated() {
-    val instanceFactory = CreateFactory.readExtension(ResourceExtension.YAML)
+    val instanceFactory = ConfigurationFactoryManager.setConfigurationFactory(ResourceType.YAML)
     assertTrue(instanceFactory is YamlReaderFactory,"Concrete factory isn't instance of YamlReaderFactory")
   }
 }

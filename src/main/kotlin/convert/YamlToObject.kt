@@ -1,4 +1,4 @@
-package resourceToObject.readers
+package convert
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
@@ -7,13 +7,10 @@ import java.nio.file.FileSystems
 import java.nio.file.Files
 
 object YamlToObject {
-  private val mapper = ObjectMapper(YAMLFactory()).registerModule(KotlinModule())
-  fun <T : Any> readYaml(filePath: String, objectClass: Class<T>): T {
+
+  inline fun <reified T : Any> readYaml(filePath: String): T {
     return Files.newBufferedReader(FileSystems.getDefault().getPath(filePath)).use {
-      mapper.readValue(
-        it,
-        objectClass
-      )
+      ObjectMapper(YAMLFactory()).registerModule(KotlinModule()).readValue(it, T::class.java)
     }
   }
 }

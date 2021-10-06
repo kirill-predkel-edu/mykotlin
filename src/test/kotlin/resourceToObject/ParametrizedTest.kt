@@ -4,16 +4,16 @@ import org.apache.logging.log4j.LogManager
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.EnumSource
 import org.junit.jupiter.params.provider.ValueSource
-import resourceToObject.data.ResourceExtension
-import resourceToObject.factories.CreateFactory
+import config.ResourceType
+import config.provider.ConfigurationFactoryManager
 
 internal class ParametrizedTest : BaseTest() {
   private val logger = LogManager.getLogger()
 
   @ParameterizedTest
-  @EnumSource(ResourceExtension::class)
-  fun readConfiguration_EnumSource_ConfigurationIsRead(resourceExtension: ResourceExtension) {
-    val instanceFactory = CreateFactory.readExtension(resourceExtension)
+  @EnumSource(ResourceType::class)
+  fun readConfiguration_EnumSource_ConfigurationIsRead(resourceType: ResourceType) {
+    val instanceFactory = ConfigurationFactoryManager.setConfigurationFactory(resourceType)
     val configurationInstance = instanceFactory.readConfiguration()
     logger.info(configurationInstance)
   }
@@ -21,7 +21,7 @@ internal class ParametrizedTest : BaseTest() {
   @ParameterizedTest
   @ValueSource(strings = ["JSON", "YAML"])
   fun readConfiguration_ValueSource_ConfigurationIsRead(input: String) {
-    val instanceFactory = CreateFactory.readExtension(ResourceExtension.valueOf(input))
+    val instanceFactory = ConfigurationFactoryManager.setConfigurationFactory(ResourceType.valueOf(input))
     val configurationInstance = instanceFactory.readConfiguration()
     logger.info(configurationInstance)
   }
