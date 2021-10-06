@@ -10,6 +10,6 @@ class YamlReaderFactory : ConfigurationFactory {
 
   override fun readConfiguration(): Configuration {
     return ConfigurationHolder.getConfiguration(YamlToObject.readYaml
-      ("src/main/resources/configuration_resources/configuration.yaml"))
+      ("$CONFIG_RESOURCES_PATH$yamlPath"))
   }
 }
