@@ -5,5 +5,9 @@ f
 6src/main/kotlin/resourceToObject/data/Configuration.kt,3\3\33f9cc184c9e6e0b3b95399f2f81820d8128ce3d
 h
 8src/main/kotlin/resourceToObject/readers/YamlToObject.kt,a\e\ae854d27bc60614860fbbc1a2640a6aeafa65a5d
-Z
-*src/main/kotlin/resourceToObject/RunApp.kt,3\e\3e27baae7d2c47e2f07e63ab81580cf9c91080ac
+\
+,src/test/kotlin/resourceToObject/BaseTest.kt,1\d\1d615b170a1a32899fe5c317b24ab3bd4ed42f17
+o
+?src/main/kotlin/resourceToObject/factories/JsonReaderFactory.kt,6\6\66affa9527d0303b833985c33103f305814da198
+h
+8src/main/kotlin/resourceToObject/readers/JsonToObject.kt,5\e\5e06859eebfb74dbb023f11f31acebd2cfdcdd6e

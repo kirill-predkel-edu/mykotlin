@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 import resourceToObject.data.ResourceExtension
-import resourceToObject.factories.CreateFactory
+import resourceToObject.factories.ExtensionReader
 
 internal class JsonReaderFactoryTest : BaseTest() {
 
   @Test
   fun readConfiguration_JsonExtension_configurationIsCorrect() {
-    val instanceFactory = CreateFactory.readExtension(ResourceExtension.JSON)
+    val instanceFactory = ExtensionReader.readExtension(ResourceExtension.JSON)
     val jsonConfigurationInstance = instanceFactory.readConfiguration()
     assertAll("All fields should be equal to configuration file",
       { Assertions.assertEquals("jsonLogin", jsonConfigurationInstance.user.login) },

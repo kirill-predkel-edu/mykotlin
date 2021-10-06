@@ -1,12 +1,12 @@
 package resourceToObject
 
 import resourceToObject.data.ResourceExtension
-import resourceToObject.factories.CreateFactory
+import resourceToObject.factories.ExtensionReader
 
 fun main() {
-  val instanceFactory = CreateFactory.readExtension(ResourceExtension.YAML)
+  val instanceFactory = ExtensionReader.readExtension(ResourceExtension.YAML)
 
-  val instanceFactorys = CreateFactory.readExtension(ResourceExtension.JSON)
+  val instanceFactorys = ExtensionReader.readExtension(ResourceExtension.JSON)
   val instance1 = instanceFactory.readConfiguration()
   val instance2 = instanceFactorys.readConfiguration()
 

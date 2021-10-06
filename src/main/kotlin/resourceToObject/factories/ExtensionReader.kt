@@ -2,7 +2,7 @@ package resourceToObject.factories
 
 import resourceToObject.data.ResourceExtension
 
-object CreateFactory {
+object ExtensionReader {
 
   fun readExtension(resourceExtension: ResourceExtension): ConfigurationFactory =
     when (resourceExtension) {

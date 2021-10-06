@@ -5,7 +5,7 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import resourceToObject.data.ResourceExtension
-import resourceToObject.factories.CreateFactory
+import resourceToObject.factories.ExtensionReader
 
 internal class SystemPropertyTest : BaseTest() {
   private val logger = LogManager.getLogger()
@@ -23,7 +23,7 @@ internal class SystemPropertyTest : BaseTest() {
   @Test
   fun readConfiguration_SystemVariable_ConfigurationIsRead() {
     val jsonSystemVar = ResourceExtension.valueOf(System.getProperty("jsonExtension"))
-    val instanceFactory = CreateFactory.readExtension(jsonSystemVar)
+    val instanceFactory = ExtensionReader.readExtension(jsonSystemVar)
     val jsonConfigurationInstance = instanceFactory.readConfiguration()
     logger.info(jsonConfigurationInstance)
   }
