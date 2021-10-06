@@ -3,14 +3,14 @@ package resourceToObject
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
-import resourceToObject.data.ResourceExtension
-import resourceToObject.factories.ExtensionReader
+import config.ResourceType
+import config.provider.ConfigurationFactoryManager
 
 internal class YamlReaderFactoryTest : BaseTest() {
 
   @Test
   fun readConfiguration_YamlExtension_configurationIsCorrect() {
-    val instanceFactory = ExtensionReader.readExtension(ResourceExtension.YAML)
+    val instanceFactory = ConfigurationFactoryManager.setConfigurationFactory(ResourceType.YAML)
     val yamlConfigurationInstance = instanceFactory.readConfiguration()
     assertAll("All fields should be equal to configuration file",
       { Assertions.assertEquals("yamlLogin", yamlConfigurationInstance.user.login) },
